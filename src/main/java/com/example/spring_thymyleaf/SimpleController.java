@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class SimpleController {
     @GetMapping("/")
-    public String getInfo(@RequestParam(value = "param1",defaultValue = "param1") String param1,
-                          @RequestParam(value = "name",defaultValue = "Przemyslaw") String name,
+    public String getInfo(@RequestParam(value = "name",defaultValue = "Przemysław") String name,
+                          @RequestParam(value = "surname",defaultValue = "Stokłosa") String surname,
                           Model model){
-        model.addAttribute("param1",param1);
         model.addAttribute("name",name);
+        model.addAttribute("surname",surname);
         return "simplecontroller";
     }
 }
